@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'angular-learn'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.8
+
+dependencies {
+    compile(
+            "org.springframework.boot:spring-boot-starter-web",
+            "org.springframework.boot:spring-boot-starter-data-jpa",
+            'com.h2database:h2',
+            'com.google.guava:guava:18.0'
+    )
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    testCompile(
+            "junit:junit",
+            'org.springframework.boot:spring-boot-starter-test:1.2.5.RELEASE',
+            'com.jayway.restassured:rest-assured:2.5.0'
+    )
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
+}
