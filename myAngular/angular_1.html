@@ -1,0 +1,25 @@
+<html ng-app="myModule">
+    <head>
+    </head>
+    <body>
+	Your name: <input type="text" ng-model="yourname" placeholder="World">
+        <hr>
+        Hello {{yourname || 'World'}}!
+        <hr>
+        <div ng-controller="commonController">
+            <div ng-controller="MyController">
+        	   <p>{{greeting}} lixufei</p>
+               <button ng-click="test1()">test1</button>
+            </div>
+            <div ng-controller="MyController1">
+                <p>{{second.text}} lixufei</p>
+                <button ng-click="test2()">test2</button> 
+            </div>  
+        <button ng-click="common()">common</button>	
+        </div>
+        <thoughtworks></thoughtworks>
+    </body>
+
+    <script src="angular.js"></script>
+    <script src="angularController.js"></script>
+</html>
